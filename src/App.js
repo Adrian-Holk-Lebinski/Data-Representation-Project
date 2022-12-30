@@ -14,6 +14,7 @@ import Container from 'react-bootstrap/Container';
 
 import { Display } from './components/display';
 import Add from './components/add';
+import { Edit } from './components/edit';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Display></Display>}></Route>
         <Route path='/add' element={<Add></Add>}></Route>
+        <Route path='/edit/:id' element={<Edit></Edit>}></Route>
       </Routes>
       </div>
       </Router>

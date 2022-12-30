@@ -14,11 +14,11 @@ app.use(bodyParser.json())
 //using cors to allow access
 app.use(cors());
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 //Using Mongoose to connect to database
@@ -60,6 +60,29 @@ app.get("/", (req, res) => {
 app.get('/api/movies', (req, res) => {
     movieModel.find((error, data) => {
         res.json(data);
+    })
+})
+app.get('/api/movies/:id', (req, res) => {
+    console.log(req.params.id);
+    movieModel.findById(req.params.id, (error, data) => {
+        res.json(data);
+    })
+})
+
+//PUT and DELETE so we can update and remove data
+app.put('/api/movies/:id', (req, res) => {
+    console.log("Update: " + req.params.id);
+
+    movieModel.findByIdAndUpdate(req.params.id, req.body, { new: true },
+        (error, data) => {
+            res.send(data);
+        })
+})
+
+app.delete('/api/movies/:id', (req, res) => {
+    console.log('Deleting: ' + req.params.id);
+    movieModel.findByIdAndDelete({ _id: req.params.id }, (error, data) => {
+        res.send(data);
     })
 })
 

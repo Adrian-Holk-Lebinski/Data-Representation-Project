@@ -14,11 +14,11 @@ export class Add extends React.Component {
         this.onChangeMovieSummary = this.onChangeMovieSummary.bind(this);
 
         this.state = {
-            title: 't',
-            director: 'd',
-            releaseYear: 'r',
-            coverImage: 'c',
-            summary: 's'
+            title: '',
+            director: '',
+            releaseYear: '',
+            coverImage: '',
+            summary: ''
         }
     }
 
@@ -84,46 +84,50 @@ export class Add extends React.Component {
                     <h3 className="title">Add a movie to the database</h3>
                     <br />
                     <div className="input-container ic1">
-                        <input  className="input" type="text" 
-                        value={this.state.title}
-                        onChange={this.onChangeMovieTitle}
-                        placeholder=" " />
+                        <input className="input" type="text"
+                            value={this.state.title}
+                            onChange={this.onChangeMovieTitle}
+                            placeholder=" "
+                            required />
                         <div className="cut"></div>
                         <label className="placeholderCustom">Title</label>
                     </div>
                     <div className="input-container ic1">
-                        <input  className="input" type="text" 
-                        value={this.state.director}
-                        onChange={this.onChangeMovieDirector}
-                        placeholder=" " />
+                        <input className="input" type="text"
+                            value={this.state.director}
+                            onChange={this.onChangeMovieDirector}
+                            placeholder=" "
+                            required />
                         <div className="cut"></div>
                         <label className="placeholderCustom">Director</label>
                     </div>
                     <div className="input-container ic1">
-                        <input  className="input" type="text" 
-                        value={this.state.releaseYear}
-                        onChange={this.onChangeMovieReleaseYear}
-                        placeholder=" " />
+                        <input className="input" type="text"
+                            value={this.state.releaseYear}
+                            onChange={this.onChangeMovieReleaseYear}
+                            placeholder=" "
+                            required />
                         <div className="cut"></div>
                         <label className="placeholderCustom">Release Year</label>
                     </div>
                     <div className="input-container ic1">
-                        <input  className="input" type="text" 
-                        value={this.state.coverImage}
-                        onChange={this.onChangeMovieCoverImage}
-                        placeholder=" " />
+                        <input className="input" type="text"
+                            value={this.state.coverImage}
+                            onChange={this.onChangeMovieCoverImage}
+                            placeholder=" "
+                            required />
                         <div className="cut"></div>
-                        <label className="placeholderCustom">Cover Image URL</label>
+                        <label className="placeholderCustom">Image URL</label>
                     </div>
-                    <div className="input-container ic1">
-                        <input  className="input" type="text" 
-                        value={this.state.summary}
-                        onChange={this.onChangeMovieSummary}
-                        placeholder=" " />
+                    <div className="input-container ic1 summaryDiv">
+                        <textarea className="input" type="text"
+                            value={this.state.summary}
+                            onChange={this.onChangeMovieSummary}
+                            placeholder=" "
+                            required />
                         <div className="cut"></div>
                         <label className="placeholderCustom">Summary</label>
                     </div>
-
                     <input className="submit" type="submit" value="Submit Movie" />
                 </form>
             </div>
