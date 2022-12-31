@@ -3,9 +3,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser')
+const path = require('path');
 
 const app = express();
 const port = 4000;
+
+//path for running app when offline
+app.use(express.static(path.join(__dirname, '../build')));
+app.use('/static', express.static(path.join(__dirname, 'build//static')));
 
 // parse application/json and x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -85,6 +90,10 @@ app.delete('/api/movies/:id', (req, res) => {
         res.send(data);
     })
 })
+
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/../build/index.html'));
+    });
 
 //listen for request on given port
 app.listen(port, () => {
