@@ -61,28 +61,28 @@ NavBar {
 }
 
 .input {
-  background-color: #303245;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
   color: #eee;
   font-size: 18px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
   width: 100%;
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
 }
 
 .cut {
-  background-color: #141414;
-  border-radius: 10px;
-  height: 20px;
-  left: 20px;
   position: absolute;
   top: -20px;
   transform: translateY(0);
   transition: transform 200ms;
   width: 93px;
+  background-color: #141414;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
 }
 
 .input:focus ~ .cut,
@@ -91,15 +91,15 @@ NavBar {
 }
 
 .placeholderCustom {
-  color: #141414;
-  font-family: sans-serif;
-  left: 20px;
-  line-height: 14px;
   pointer-events: none;
   position: absolute;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
   top: 20px;
+  color: #141414;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
 }
 
 .input:focus ~ .placeholderCustom,
@@ -108,25 +108,25 @@ NavBar {
 }
 
 .input:not(:placeholder-shown) ~ .placeholderCustom {
-  color: #808097;
+  color: #808096;
 }
 
 .input:focus ~ .placeholderCustom {
-  color: #dc2f55;
+  color: #dc2f54;
 }
 
 .submit {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
   cursor: pointer;
   font-size: 18px;
   height: 50px;
   margin-top: 38px;
   text-align: center;
   width: 100%;
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
 }
 
 .submit:active {
@@ -134,5 +134,5 @@ NavBar {
 }
 
 .summaryDiv{
-  height: 20%;
+  height: 21%;
 }
